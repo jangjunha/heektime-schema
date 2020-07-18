@@ -1,0 +1,7 @@
+syntax = "proto3";
+
+message Period {
+  int32 period = 1;
+  int32 timeBegin = 2;
+  int32 timeEnd = 3;
+}

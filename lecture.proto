@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+message Lecture {
+  string identifier = 1;
+  string name = 2;
+  string professor = 3;
+  double credit = 4;
+  double hours_per_week = 5;
+  repeated string category = 6;
+  string subtitle = 7;
+  string curriculum_type = 8;
+  repeated LectureTime times = 9;
+  repeated Meta metas = 10;
+
+  message LectureTime {
+    int32 weekday = 1;
+    int32 timeBegin = 2;
+    int32 timeEnd = 3;
+    reserved 4 to 5;
+    string room = 6;
+  }
+
+  message Meta {
+    oneof value {
+      string tag = 1;
+      Data data = 2;
+    }
+
+    message Data {
+      string key = 1;
+      string value = 2;
+    }
+  }
+}
