@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package heek.heektime;
+
 enum Semester {
   unknown = 0;
   spring = 1;

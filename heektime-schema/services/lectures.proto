@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+import "heektime-schema/lecture.proto";
+import "heektime-schema/period.proto";
+import "heektime-schema/semester.proto";
+
+package heek.heektime;
+
+service Lectures {
+  rpc GetLectures(GetLecturesPayload) returns (stream heek.heektime.Lecture) {}
+}
+
+message GetLecturesPayload {
+  int32 year = 1;
+  heek.heektime.Semester semester = 2;
+  string school_id = 3;
+  repeated heek.heektime.Period periods = 7;
+  repeated Option options = 10;
+
+  message Option {
+    string key = 1;
+    string value = 2;
+  }
+}

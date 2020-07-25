@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package heek.heektime;
+
 message Period {
   int32 period = 1;
   int32 timeBegin = 2;
