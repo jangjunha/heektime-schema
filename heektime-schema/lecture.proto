@@ -13,6 +13,7 @@ message Lecture {
   string curriculum_type = 8;
   repeated LectureTime times = 9;
   repeated Meta metas = 10;
+  string url = 11;
 
   message LectureTime {
     int32 weekday = 1;
